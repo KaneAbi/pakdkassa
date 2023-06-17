@@ -1,0 +1,63 @@
+<div *ngIf="mobile" style="padding-right: 40px;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px;">
+      <h3>Artikel</h3>
+      <h3>Anzahl</h3>
+      <h3>Total</h3> 
+      <h3></h3>  
+  </div>
+
+  <app-cartitem
+  *ngFor="let item of cartItems; let i = index"
+  [cartItem]="item"
+  (cartItemDeleted)="onCartItemDeleted($event)"
+  (cartItemChanged)="onCartItemChanged($event)"
+  >
+  </app-cartitem>    
+
+  <div style="display: flex;">
+    <h1>Total: {{cartTotal}} € </h1>
+    <!--<h4>Total new {{total}}</h4>-->
+  </div>
+  
+  <mat-form-field>
+    <mat-label>Gezahltes Geld</mat-label>
+    <input matInput type="number" [(ngModel)]="given">
+  </mat-form-field>
+
+  <div *ngIf="(given - cartTotal) > 0" style="display: flex;">
+    <h1>Rückgeld: {{given - cartTotal}} € </h1>
+    <!--<h4>Total new {{total}}</h4>-->
+  </div>
+</div> 
+
+<div *ngIf="!mobile" style="display: grid; justify-content: center;">
+  <div *ngIf="cartItems == []" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px;">
+      <h3>Artikel</h3>
+      <h3>Anzahl</h3>
+      <h3>Total</h3> 
+      <h3></h3>  
+  </div>
+
+  <app-cartitem
+  *ngFor="let item of cartItems; let i = index"
+  [cartItem]="item"
+  (cartItemDeleted)="onCartItemDeleted($event)"
+  (cartItemChanged)="onCartItemChanged($event)"
+  >
+  </app-cartitem>    
+
+  <div style="display: flex; justify-content: center;">
+    <h1>Total: {{cartTotal}} € </h1>
+    <!--<h4>Total new {{total}}</h4>-->
+  </div>
+  
+  <mat-form-field style="display: grid; justify-content: center;">
+    <mat-label>Gezahltes Geld</mat-label>
+    <input matInput type="number" [(ngModel)]="given">
+  </mat-form-field>
+
+  <div *ngIf="(given - cartTotal) > 0" style="display: flex; justify-content: center;">
+    <h1>Rückgeld: {{given - cartTotal}} € </h1>
+    <!--<h4>Total new {{total}}</h4>-->
+  </div>
+</div> 

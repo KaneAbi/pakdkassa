@@ -1,0 +1,24 @@
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; font-size: large; align-items: center;">
+    <div>
+      {{cartItem.name}}
+    </div>
+    <div>
+      <input type="number"
+        value={{cartItem.quantity}}
+        min=1
+        [(ngModel)]="cartItem.quantity"
+        (change)="onCartItemChanged(cartItem.id)"
+        >
+    </div>
+    <div>
+      {{cartItem.quantity * cartItem.price}} €
+    </div>
+    <div>
+      <button mat-icon-button  (click)="onCartItemDeleted(cartItem.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
+
+

@@ -1,0 +1,47 @@
+<div *ngIf="mobile" style="display: grid; grid-template-columns: 0.75fr 0.25fr; padding-top: 50px;"> 
+  <app-product 
+    (cartUpdated)="onCartUpdated($event)"
+    >
+  </app-product>
+
+  <div>
+    <app-cart
+    [cartItems]="cartItems"
+    [cartTotal]="cartTotal"
+    (cartItemDeleted)="onCartItemDeleted($event)"
+    (cartItemChanged)="onCartItemChanged($event)"
+    >
+  </app-cart>
+
+    <div style="width: 100%; justify-content: center; padding-right: 80px;" >
+      <button mat-raised-button (click)="reset()" color="warn" style="width: 90%;">
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!mobile" style="display: grid; grid-template-columns: 1fr; padding-top: 50px;"> 
+  <app-product 
+    (cartUpdated)="onCartUpdated($event)"
+    >
+  </app-product>
+
+  <div>
+    <app-cart
+    [cartItems]="cartItems"
+    [cartTotal]="cartTotal"
+    (cartItemDeleted)="onCartItemDeleted($event)"
+    (cartItemChanged)="onCartItemChanged($event)"
+    >
+  </app-cart>
+
+    <div style="display: grid; width: 100%; justify-content: center;" >
+      <button mat-raised-button (click)="reset()" color="warn" style="width: 100%;">
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
+
+

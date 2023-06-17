@@ -1,0 +1,29 @@
+<div *ngIf="mobile" style="padding-left: 5%; padding-right: 5%; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+    <mat-card *ngFor="let item of productItem" (click)="onCartUpdated(item.id)" [style.background-color]="item.typ == 0 ? 'tomato' : (item.typ == 1 ? 'cadetblue' : 'green')"
+     style="color: aliceblue;" mat-button>
+    <mat-card-content>
+      <div style="display: grid; justify-content: center;">
+        <!-- img [src]="item.imageUrl" alt="{{item.name}}"  style="width: 100%; height: 100%; object-fit: fill;"--->
+        <h1> <b>
+          {{item.name}}
+        </b></h1>
+        <h2> {{item.price}} €</h2>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div> 
+
+<div *ngIf="!mobile" style="padding-left: 5%; padding-right: 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+  <mat-card *ngFor="let item of productItem" (click)="onCartUpdated(item.id)" [style.background-color]="item.typ == 0 ? 'tomato' : (item.typ == 1 ? 'cadetblue' : 'green')"
+   style="color: aliceblue;" mat-button>
+  <mat-card-content>
+    <div style="display: grid; justify-content: center;">
+      <!-- img [src]="item.imageUrl" alt="{{item.name}}"  style="width: 100%; height: 100%; object-fit: fill;"--->
+      <h1> <b>
+        {{item.name}}
+      </b></h1>
+      <h2> {{item.price}} €</h2>
+    </div>
+  </mat-card-content>
+</mat-card>
+</div> 
