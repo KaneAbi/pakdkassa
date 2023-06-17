@@ -7,7 +7,9 @@
         <h1> <b>
           {{item.name}}
         </b></h1>
-        <h2> {{item.price}} €</h2>
+      </div>
+      <div style="display: grid; justify-content: center; align-items: center;">
+        <h3> {{item.price}} €</h3>
       </div>
     </mat-card-content>
   </mat-card>
@@ -19,10 +21,12 @@
   <mat-card-content>
     <div style="display: grid; justify-content: center;">
       <!-- img [src]="item.imageUrl" alt="{{item.name}}"  style="width: 100%; height: 100%; object-fit: fill;"--->
-      <h1> <b>
+      <h2> <b>
         {{item.name}}
-      </b></h1>
-      <h2> {{item.price}} €</h2>
+      </b></h2>
+    </div>
+    <div style="display: grid; justify-content: center; align-items: center;">
+      <h3> {{item.price}} €</h3>
     </div>
   </mat-card-content>
 </mat-card>

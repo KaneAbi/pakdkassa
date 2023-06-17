@@ -1,4 +1,4 @@
-<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; font-size: large; align-items: center;">
+<div style="display: grid; grid-template-columns: 2fr 1fr 0.75fr 0.5fr; align-items: center;">
     <div>
       {{cartItem.name}}
     </div>
@@ -10,7 +10,7 @@
         (change)="onCartItemChanged(cartItem.id)"
         >
     </div>
-    <div>
+    <div style="display: grid; justify-content: center;">
       {{cartItem.quantity * cartItem.price}} €
     </div>
     <div>

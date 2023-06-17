@@ -11,12 +11,12 @@ import { CartItem } from './cart.model';
 })
 export class CartComponent implements OnInit {
   total: number = 0;
-  given: number = 0;
   mobile: Boolean;
 
   displayedColumns: string[] = ['artikel', 'anzahl', 'total'];
   @Input() cartTotal: number;
   @Input() cartItems: CartItem[];
+  @Input() given: number;
   @Output() cartItemDeleted = new EventEmitter<{
     productId: number
   }>();

@@ -1,5 +1,5 @@
 <div *ngIf="mobile" style="padding-right: 40px;">
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px;">
+  <div style="display: grid; grid-template-columns: 2fr 1fr 0.75fr 0.5fr;">
       <h3>Artikel</h3>
       <h3>Anzahl</h3>
       <h3>Total</h3> 
@@ -19,7 +19,7 @@
     <!--<h4>Total new {{total}}</h4>-->
   </div>
   
-  <mat-form-field>
+  <mat-form-field style="width: 90%;">
     <mat-label>Gezahltes Geld</mat-label>
     <input matInput type="number" [(ngModel)]="given">
   </mat-form-field>
@@ -31,7 +31,7 @@
 </div> 
 
 <div *ngIf="!mobile" style="display: grid; justify-content: center;">
-  <div *ngIf="cartItems == []" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px;">
+  <div style="display: grid; grid-template-columns: 2fr 1fr 0.75fr 0.5fr; gap: 20px">
       <h3>Artikel</h3>
       <h3>Anzahl</h3>
       <h3>Total</h3> 

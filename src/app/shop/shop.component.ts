@@ -9,6 +9,7 @@ import { CartItem } from '../cart/cart.model';
 })
 export class ShopComponent implements OnInit {
   cartTotal: number = 0;
+  given: number = 0;
   cartItems: CartItem[] = [];
   mobile: Boolean;
 
@@ -63,5 +64,6 @@ export class ShopComponent implements OnInit {
   reset() {
     this.cartItems = []
     this.updateCartTotal()
+    this.given = 0
   }
 }
